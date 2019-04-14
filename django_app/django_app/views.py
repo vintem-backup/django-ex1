@@ -1,5 +1,9 @@
 from django.http import HttpResponse
 from django.http import JsonResponse
+from django.shortcuts import render
+
+def hello(request):
+    return render(request,'index.html')
 
 def test1(request,number,string):
     return HttpResponse('Olá, ' + string + '. O número digitado foi: ' + str(number))
@@ -23,3 +27,7 @@ def readFromDb(name):
 def funcname(request,name):
 
     return JsonResponse(readFromDb(name))
+
+def funcNameRender(request,name):
+
+    return render(request,'person.html',{'var_person': readFromDb(name)})

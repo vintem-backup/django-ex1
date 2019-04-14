@@ -6,6 +6,8 @@ class Person(models.Model):
     age = models.IntegerField()
     salary = models.DecimalField(max_digits=7,decimal_places=2)
     bio = models.TextField()
+    fale_mais = models.TextField(null=True, blank=True)
+    photo = models.ImageField(upload_to='clients_photos', null=True, blank=True)
 
     def __str__(self):
         return self.first_name+' '+self.last_name

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<title>Django</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul>
+        {% for pessoa in var_pessoas %}
+            <div class="w3-container">
+                <li>
+
+
+                    <a href="{% url 'updateperson' pessoa.id %}"> {{ pessoa.first_name }} {{ pessoa.last_name }} </a>
+                    <a href="{% url 'deleteperson' pessoa.id %}" class="w3-button w3-small">Deletar</a>
+                </li>
+            </div>
+
+
+        {% endfor %}
+    </ul>
+
+    <div class="w3-container">
+        <a href="{% url 'newperson' %}" class="w3-button w3-black">Novo Cliente</a>
+    </div>
+
+</body>
+</html>
